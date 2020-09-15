@@ -13,7 +13,7 @@ namespace blog_data
     {
         [Key]
         [Column("id")]
-        public int Id;
+        public int Id { get; }
 
         [Column("title")]
         [Required]
