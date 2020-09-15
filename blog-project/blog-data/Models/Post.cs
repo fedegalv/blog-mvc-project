@@ -13,29 +13,29 @@ namespace blog_data
     {
         [Key]
         [Column("id")]
-        public int id;
+        public int Id;
 
         [Column("title")]
         [Required]
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Debe usar letras unicamente")]
-        public string titulo;
+        public string Titulo { get; set; }
 
         [Column("content")]
         [Required]
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Debe usar letras unicamente")]
-        public string contenido;
+        public string Contenido { get; set; }
 
-        public string imagen;
+        public string Imagen { get; set; }
 
         [Column("category")]
         [Required]
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Debe usar letras unicamente")]
-        public string categoria;
-        
+        public string Categoria { get; set; }
+
         [Column("date")]
         [Required]
         [DataType(DataType.DateTime)]
-        public DateTime fecha;
+        public DateTime Fecha { get; set; }
 
     }
 }
