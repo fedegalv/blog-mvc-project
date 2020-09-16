@@ -43,54 +43,33 @@ namespace blog_project.Controllers
                 }
                 return View("~/Post/Create.cshtml", post);
             }
-            catch
+            catch (Exception)
             {
-                return View();
+                return RedirectToAction("Index");
             }
         }
 
-        // GET: Post/Edit/5
-        public ActionResult Edit(int id)
+        [HttpPatch]
+        /*
+        public ActionResult Update(int id)
         {
-            return View();
-        }
 
-        // POST: Post/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
             try
             {
-                // TODO: Add update logic here
+                if(PostBusiness.UpdatePost(id))
+                {
+                    
+                }
+               
+            }
+            catch (Exception)
+            {
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
         }
+        */
 
-        // GET: Post/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Post/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }

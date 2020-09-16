@@ -30,6 +30,12 @@ namespace blog_data.Business
             }
             return validationStatus;
         }
+
+        /// <summary>
+        /// Adds a validated post
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns>Return true if add is successfull, else return false</returns>
         static public bool AddPost(Post post)
         {
             bool operationSuccess = false;
@@ -42,20 +48,34 @@ namespace blog_data.Business
             return operationSuccess;
         }
 
+        /// <summary>
+        /// Gets a post
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Return post if found, else null</returns>
         static public Post GetPost(int id)
         {
             SqlPostData sql = new SqlPostData();
             return sql.Get(id);
         }
-
+        /// <summary>
+        /// Gets all the posts
+        /// </summary>
+        /// <returns>IEnumerable of Post</returns>
         static public IEnumerable<Post> GetAllPost()
         {
             SqlPostData sql = new SqlPostData();
             return sql.GetAll().OrderByDescending(x => x.Fecha);
         }
 
-        static public bool UpdatePost(Post post)
+        /// <summary>
+        /// Updates post, using the id
+        /// </summary>
+        /// <param name="id">Id of the Post to update</param>
+        /// <returns>Return true if update is successfull, else return false </returns>
+        static public bool UpdatePost(int id)
         {
+            Post post = GetPost(id);
             bool operationSuccess = false;
             if (post != null && ValidatePost(post))
             {
@@ -65,9 +85,14 @@ namespace blog_data.Business
             }
             return operationSuccess;
         }
-
-        static public bool DeletePost(Post post)
+        /// <summary>
+        /// Deletes post
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Returns true if sucessfull, else returns false</returns>
+        static public bool DeletePost(int id)
         {
+            Post post = GetPost(id);
             bool operationSucess = false;
             if (post != null && ValidatePost(post))
             {

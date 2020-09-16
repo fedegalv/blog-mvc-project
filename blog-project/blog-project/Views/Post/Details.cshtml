@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalles del post</h2>
 
 <div>
-    <h4>Post</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -28,22 +27,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Imagen)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Imagen)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Fecha)
         </dt>
 
@@ -54,6 +37,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Actualizar", "Update", new { id = Model.Id }) |
+    @Html.ActionLink("Volver a la lista", "Index")
 </p>

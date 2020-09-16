@@ -22,17 +22,16 @@ namespace blog_data
         public string Contenido { get; set; }
 
         [Column("img")]
-        [Required]
+        
         [Url]
         public string Imagen { get; set; }
 
         [Column("category")]
-        [Required]
+        
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Debe usar letras unicamente")]
         public string Categoria { get; set; }
 
         [Column("date")]
-        [Required]
         [DataType(DataType.DateTime)]
         public DateTime Fecha { get; set; }
 
