@@ -84,3 +84,10 @@ D:\ASP net\blog-mvc-project\blog-project\blog-project\obj\Debug\blog-web.csproj.
 D:\ASP net\blog-mvc-project\blog-project\blog-project\obj\Debug\blog-web.csproj.CopyComplete
 D:\ASP net\blog-mvc-project\blog-project\blog-project\obj\Debug\blog-project.dll
 D:\ASP net\blog-mvc-project\blog-project\blog-project\obj\Debug\blog-project.pdb
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\blog-data.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\EntityFramework.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\blog-data.pdb
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\blog-data.dll.config
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\EntityFramework.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\EntityFramework.SqlServer.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\EntityFramework.SqlServer.xml

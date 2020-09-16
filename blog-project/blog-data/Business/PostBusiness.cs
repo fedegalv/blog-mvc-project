@@ -51,7 +51,7 @@ namespace blog_data.Business
         static public IEnumerable<Post> GetAllPost()
         {
             SqlPostData sql = new SqlPostData();
-            return sql.GetAll();
+            return sql.GetAll().OrderByDescending(x => x.Fecha);
         }
 
         static public bool UpdatePost(Post post)
