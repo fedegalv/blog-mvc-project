@@ -1,4 +1,5 @@
-﻿using System;
+﻿using blog_data.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,7 @@ namespace blog_project.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return View(SqlPostData.);
         }
 
         public ActionResult About()

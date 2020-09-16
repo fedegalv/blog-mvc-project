@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace blog_data
@@ -25,6 +21,9 @@ namespace blog_data
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Debe usar letras unicamente")]
         public string Contenido { get; set; }
 
+        [Column("img")]
+        [Required]
+        [Url]
         public string Imagen { get; set; }
 
         [Column("category")]
@@ -36,6 +35,7 @@ namespace blog_data
         [Required]
         [DataType(DataType.DateTime)]
         public DateTime Fecha { get; set; }
+
 
     }
 }
