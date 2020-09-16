@@ -10,15 +10,16 @@ namespace blog_project.Controllers
     public class PostController : Controller
     {
         // GET: Post
+        [HttpGet]
         public ActionResult Index()
         {
             return View(PostBusiness.GetAllPost());
         }
-
+        [HttpGet]
         // GET: Post/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(PostBusiness.GetPost(id));
         }
 
         // GET: Post/Create
