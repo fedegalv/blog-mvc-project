@@ -1,4 +1,5 @@
-﻿using blog_data.Business;
+﻿using blog_data;
+using blog_data.Business;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace blog_project.Controllers
         {
             return View(PostBusiness.GetPost(id));
         }
-
+        [HttpGet]
         // GET: Post/Create
         public ActionResult Create()
         {
@@ -30,13 +31,17 @@ namespace blog_project.Controllers
 
         // POST: Post/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Post post)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                post.Fecha = DateTime.Now;
+                if (PostBusiness.AddPost(post))
+                {
+                    return RedirectToAction("Index");
+                }
+                return View("~/Post/Create.cshtml", post);
             }
             catch
             {
