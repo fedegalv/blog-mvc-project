@@ -91,3 +91,9 @@ D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\blog-data.dll.config
 D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\EntityFramework.xml
 D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\EntityFramework.SqlServer.dll
 D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\EntityFramework.SqlServer.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Net.Http.Formatting.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Web.Http.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Web.Http.WebHost.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Net.Http.Formatting.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Web.Http.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Web.Http.WebHost.xml
