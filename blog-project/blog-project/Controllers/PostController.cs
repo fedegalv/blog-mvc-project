@@ -28,9 +28,11 @@ namespace blog_project.Controllers
             }
             else
             {
-                TempData["error"] = " ERROR: ID no encontrada o valida ";
+                //Response.StatusCode = 404;
+                //TempData["error"] = $" ERROR {Response.StatusCode}: ID no encontrada o valida ";
+                return HttpNotFound("ID no encontrada o invalida");
             }
-            return RedirectToAction("Index", "Post");
+            //return RedirectToAction("Index", "Post");
         }
         [HttpGet]
         // GET: Post/Create
@@ -58,7 +60,7 @@ namespace blog_project.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Post");
             }
         }
         [HttpGet]
@@ -72,8 +74,9 @@ namespace blog_project.Controllers
             else
             {
                 TempData["error"] = " ERROR: ID no encontrada o valida ";
+                return RedirectToAction("Index");
             }
-            return View("~/Views/Post/Update.cshtml", post);
+            //return View("~/Views/Post/Update.cshtml", post);
         }
 
         [HttpPost]
@@ -88,8 +91,12 @@ namespace blog_project.Controllers
                     {
                         return RedirectToAction("Index");
                     }
+                    else
+                    {
+                        TempData["error"] = " ERROR: ID no encontrada o valida ";
+                        return RedirectToAction("Index");
+                    }
                 }
-
                 return View(post);
             }
             catch (Exception)
@@ -102,7 +109,16 @@ namespace blog_project.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            return View("~/Views/Post/Delete.cshtml", PostBusiness.GetPost(id));
+            Post post = PostBusiness.GetPost(id);
+            if (post != null)
+            {
+                return View("~/Views/Post/Delete.cshtml", post);
+            }
+            else
+            {
+                TempData["error"] = " ERROR: ID no encontrada o valida ";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
@@ -112,7 +128,8 @@ namespace blog_project.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View(post);
+            TempData["error"] = " ERROR: No se pudo eliminar, ID no encontrada o valida ";
+            return RedirectToAction("Index");
         }
 
     }

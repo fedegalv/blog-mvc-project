@@ -1,5 +1,6 @@
 ﻿using blog_data;
 using blog_data.Business;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Web.Http;
 
 namespace blog_project.Controllers
 {
+    // Incomplete feature, to do later
     [RoutePrefix("api")]
     public class PostAPIController : ApiController
     {
@@ -28,9 +30,11 @@ namespace blog_project.Controllers
 
         //[HttpPost]
         //[Route("posts")]
-        //public bool AddPost(Post post)
+        //public bool AddPost([FromBody] object myJsonResponse)
         //{
-
+        //    //Post myDeserializedClass = JsonConvert.DeserializeObject<Post>();
+        //    //return PostBusiness.AddPost(myDeserializedClass);
+        //    //return false;
         //}
     }
 }
