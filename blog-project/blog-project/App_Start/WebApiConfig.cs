@@ -19,7 +19,7 @@ namespace WebApplication1.App_Start
             );
             config.Routes.MapHttpRoute(
                 name: "postsApi",
-                routeTemplate: "posts/{id}",
+                routeTemplate: "api/posts/{id}",
                 defaults: new { id = RouteParameter.Optional }
                 );
         }

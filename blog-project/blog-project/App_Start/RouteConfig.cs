@@ -12,7 +12,17 @@ namespace blog_project
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            
+
+            routes.MapRoute(
+                name: "PostsID",
+                url: "posts/{id}",
+                defaults: new { controller = "Post", action = "Details" }
+            );
+            routes.MapRoute(
+               name: "PostsIndex",
+               url: "posts",
+               defaults: new { controller = "Post", action = "Index" }
+           );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
@@ -21,8 +31,9 @@ namespace blog_project
             routes.MapRoute(
                 name: "DefaultBlank",
                 url: "",
-                defaults: new { controller = "¨Post", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Post", action = "Index", id = UrlParameter.Optional }
             );
+            
         }
     }
 }
