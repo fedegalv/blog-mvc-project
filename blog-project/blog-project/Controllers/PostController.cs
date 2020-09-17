@@ -14,13 +14,23 @@ namespace blog_project.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewData["error"] = TempData["error"];
             return View(PostBusiness.GetAllPost());
         }
         [HttpGet]
         // GET: Post/Details/5
         public ActionResult Details(int id)
         {
-            return View(PostBusiness.GetPost(id));
+            Post post = PostBusiness.GetPost(id);
+            if (post != null)
+            {
+                return View(post);
+            }
+            else
+            {
+                TempData["error"] = " ERROR: ID no encontrada o valida ";
+            }
+            return RedirectToAction("Index", "Post");
         }
         [HttpGet]
         // GET: Post/Create
@@ -36,31 +46,51 @@ namespace blog_project.Controllers
         {
             try
             {
-                post.Fecha = DateTime.Now;
-                if (PostBusiness.AddPost(post))
+                if (ModelState.IsValid)
                 {
-                    return RedirectToAction("Index");
+                    post.Fecha = DateTime.Now;
+                    if (PostBusiness.AddPost(post))
+                    {
+                        return RedirectToAction("Index");
+                    }
                 }
-                return View("~/Post/Create.cshtml", post);
+                return View("~/Views/Post/Create.cshtml", post);
             }
             catch (Exception)
             {
                 return RedirectToAction("Index");
             }
         }
-
-        [HttpPatch]
-        /*
+        [HttpGet]
         public ActionResult Update(int id)
         {
+            Post post = PostBusiness.GetPost(id);
+            if (post != null)
+            {
+                return View(post);
+            }
+            else
+            {
+                TempData["error"] = " ERROR: ID no encontrada o valida ";
+            }
+            return View("~/Views/Post/Update.cshtml", post);
+        }
 
+        [HttpPost]
+        public ActionResult Update(Post post)
+        {
             try
             {
-                if(PostBusiness.UpdatePost(id))
+                if (ModelState.IsValid)
                 {
-                    
+                    post.Fecha = DateTime.Now;
+                    if (PostBusiness.UpdatePost(post))
+                    {
+                        return RedirectToAction("Index");
+                    }
                 }
-               
+
+                return View(post);
             }
             catch (Exception)
             {
@@ -68,8 +98,22 @@ namespace blog_project.Controllers
                 return RedirectToAction("Index");
             }
         }
-        */
 
-        
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            return View("~/Views/Post/Delete.cshtml", PostBusiness.GetPost(id));
+        }
+
+        [HttpPost]
+        public ActionResult Delete(Post post)
+        {
+            if (PostBusiness.DeletePost(post))
+            {
+                return RedirectToAction("Index");
+            }
+            return View(post);
+        }
+
     }
 }

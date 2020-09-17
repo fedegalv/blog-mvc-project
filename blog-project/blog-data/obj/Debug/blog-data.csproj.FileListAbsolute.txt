@@ -9,3 +9,4 @@ D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.csproj.Co
 D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.csproj.CopyComplete
 D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.dll
 D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.pdb
+D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.csprojAssemblyReference.cache

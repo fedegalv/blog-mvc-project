@@ -73,9 +73,8 @@ namespace blog_data.Business
         /// </summary>
         /// <param name="id">Id of the Post to update</param>
         /// <returns>Return true if update is successfull, else return false </returns>
-        static public bool UpdatePost(int id)
+        static public bool UpdatePost(Post post)
         {
-            Post post = GetPost(id);
             bool operationSuccess = false;
             if (post != null && ValidatePost(post))
             {
@@ -90,9 +89,8 @@ namespace blog_data.Business
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Returns true if sucessfull, else returns false</returns>
-        static public bool DeletePost(int id)
+        static public bool DeletePost(Post post)
         {
-            Post post = GetPost(id);
             bool operationSucess = false;
             if (post != null && ValidatePost(post))
             {
