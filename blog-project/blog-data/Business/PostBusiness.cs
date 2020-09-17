@@ -41,6 +41,10 @@ namespace blog_data.Business
             bool operationSuccess = false;
             if (post != null && ValidatePost(post))
             {
+                //ASIGNAMOS FECHA
+                post.Fecha = DateTime.Now;
+                //post.Imagen = "";
+                //post.Categoria = "";
                 SqlPostData sql = new SqlPostData();
                 sql.Add(post);
                 operationSuccess = true;
@@ -92,7 +96,7 @@ namespace blog_data.Business
         static public bool DeletePost(Post post)
         {
             bool operationSucess = false;
-            if (post != null && ValidatePost(post))
+            if (post != null)
             {
                 SqlPostData sql = new SqlPostData();
                 sql.Remove(post.Id);

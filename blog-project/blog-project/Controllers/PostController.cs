@@ -50,7 +50,9 @@ namespace blog_project.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    post.Fecha = DateTime.Now;
+                    //post.Fecha = DateTime.Now;
+                    //post.Imagen = "";
+                    //post.Categoria = "";
                     if (PostBusiness.AddPost(post))
                     {
                         return RedirectToAction("Index");
@@ -58,7 +60,7 @@ namespace blog_project.Controllers
                 }
                 return View("~/Views/Post/Create.cshtml", post);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 return RedirectToAction("Index", "Post");
             }
@@ -80,6 +82,7 @@ namespace blog_project.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update(Post post)
         {
             try
@@ -120,7 +123,7 @@ namespace blog_project.Controllers
                 return RedirectToAction("Index");
             }
         }
-
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Delete(Post post)
         {

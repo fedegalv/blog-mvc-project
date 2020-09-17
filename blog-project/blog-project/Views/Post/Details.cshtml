@@ -19,6 +19,13 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+        <dd>
+            <img src="@Model.Imagen" alt="Post picture" width="100" height="100">
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Contenido)
         </dt>
 
@@ -26,6 +33,13 @@
             @Html.DisplayFor(model => model.Contenido)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Fecha)
         </dt>
