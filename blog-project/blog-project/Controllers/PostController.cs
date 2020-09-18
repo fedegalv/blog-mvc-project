@@ -1,5 +1,6 @@
 ﻿using blog_data;
 using blog_data.Business;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,13 @@ namespace blog_project.Controllers
     {
         // GET: Post
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
+
             ViewData["error"] = TempData["error"];
-            return View(PostBusiness.GetAllPost());
+            //RETURNS A PAGEDLIST, IF IT'S THE FIRST TIME PAGE IS NULL THEN USE A VALUE OF 1,
+            //SO DISPLAY THE FIRST PAGE, SECOND VALUE IS THE PAGE SIZE, SO WE WILL HAVE A MAX OF 3 PAGES
+            return View(PostBusiness.GetAllPost().ToPagedList(page ?? 1, 5 ));
         }
         [HttpGet]
         // GET: Post/Details/5
@@ -60,7 +64,7 @@ namespace blog_project.Controllers
                 }
                 return View("~/Views/Post/Create.cshtml", post);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return RedirectToAction("Index", "Post");
             }

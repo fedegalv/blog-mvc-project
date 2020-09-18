@@ -1,4 +1,6 @@
-﻿@model IEnumerable<blog_data.Post>
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<blog_data.Post>
 
 @{
     ViewBag.Title = "Index";
@@ -14,17 +16,17 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Titulo)
+            @Html.DisplayNameFor(model => model.First().Titulo);
         </th>
         
         <th>
-            @Html.DisplayNameFor(model => model.Imagen)
+            @Html.DisplayNameFor(model => model.First().Imagen)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Categoria)
+            @Html.DisplayNameFor(model => model.First().Categoria)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Fecha)
+            @Html.DisplayNameFor(model => model.First().Fecha)
         </th>
         <th></th>
     </tr>
@@ -53,3 +55,5 @@
 }
 
 </table>
+
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

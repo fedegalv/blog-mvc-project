@@ -97,3 +97,7 @@ D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Web.Http.WebHos
 D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Net.Http.Formatting.xml
 D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Web.Http.xml
 D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\System.Web.Http.WebHost.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\PagedList.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\PagedList.Mvc.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\PagedList.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-project\bin\PagedList.Mvc.xml
