@@ -1,0 +1,12 @@
+D:\ASP net\blog-mvc-project\blog-project\blog-data\bin\Debug\blog-data.dll.config
+D:\ASP net\blog-mvc-project\blog-project\blog-data\bin\Debug\blog-data.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-data\bin\Debug\blog-data.pdb
+D:\ASP net\blog-mvc-project\blog-project\blog-data\bin\Debug\EntityFramework.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-data\bin\Debug\EntityFramework.SqlServer.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-data\bin\Debug\EntityFramework.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-data\bin\Debug\EntityFramework.SqlServer.xml
+D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.csproj.CoreCompileInputs.cache
+D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.csproj.CopyComplete
+D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.dll
+D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.pdb
+D:\ASP net\blog-mvc-project\blog-project\blog-data\obj\Debug\blog-data.csprojAssemblyReference.cache
