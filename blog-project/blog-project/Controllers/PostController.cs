@@ -52,12 +52,8 @@ namespace blog_project.Controllers
         {
             try
             {
-                post.IsActive = true;
                 if (ModelState.IsValid)
                 {
-                    //post.Fecha = DateTime.Now;
-                    //post.Imagen = "";
-                    
                     if (PostBusiness.AddPost(post))
                     {
                         return RedirectToAction("Index");
