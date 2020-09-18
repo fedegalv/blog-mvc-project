@@ -35,6 +35,9 @@ namespace blog_data
         [DataType(DataType.DateTime)]
         public DateTime Fecha { get; set; }
 
+        [Column("isActive")]
+        public bool IsActive { get; set; } = true;
+
 
     }
 }

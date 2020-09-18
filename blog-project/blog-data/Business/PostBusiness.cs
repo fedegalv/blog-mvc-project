@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,7 +70,7 @@ namespace blog_data.Business
         static public IEnumerable<Post> GetAllPost()
         {
             SqlPostData sql = new SqlPostData();
-            return sql.GetAll().OrderByDescending(x => x.Fecha);
+            return sql.GetAll().Where(x => x.IsActive == true).OrderByDescending(x => x.Fecha);
         }
 
         /// <summary>
