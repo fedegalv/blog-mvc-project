@@ -29,7 +29,7 @@ namespace blog_data.Services
         /// <returns>Returns Post if found, else returns null</returns>
         public Post Get(int id)
         {
-            return db.post.FirstOrDefault(x => x.Id == id);
+            return db.post.Where(x => x.IsActive == true).FirstOrDefault(x => x.Id == id);
         }
 
         /// <summary>
@@ -47,9 +47,16 @@ namespace blog_data.Services
         /// <param name="id">Post ID</param>
         public void Remove (int id)
         {
+            //var post = db.post.Find(id);
+            //var entry = db.Entry(post);
+            //entry.State = System.Data.Entity.EntityState.Deleted;
+            //db.SaveChanges();
+
+            //Changes the IsActive to false, to soft delete the post.
             var post = db.post.Find(id);
+            post.IsActive = false;
             var entry = db.Entry(post);
-            entry.State = System.Data.Entity.EntityState.Deleted;
+            entry.State = System.Data.Entity.EntityState.Modified;
             db.SaveChanges();
         }
 

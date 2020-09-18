@@ -24,6 +24,21 @@ namespace blog_project
                defaults: new { controller = "Post", action = "Index" }
            );
             routes.MapRoute(
+                name: "UpdateDefault",
+                url: "{controller}/Update",
+                defaults: new { controller = "Post", action = "Index"}
+            );
+            routes.MapRoute(
+                name: "DetailsDefault",
+                url: "{controller}/Details",
+                defaults: new { controller = "Post", action = "Index" }
+            );
+            routes.MapRoute(
+                name: "DeleteDefault",
+                url: "{controller}/Delete",
+                defaults: new { controller = "Post", action = "Index" }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Post", action = "Index", id = UrlParameter.Optional }
